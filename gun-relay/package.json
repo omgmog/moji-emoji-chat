@@ -1,0 +1,17 @@
+{
+  "name": "gun-relay",
+  "version": "1.0.0",
+  "description": "GunDB relay server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "gun": "^0.2020.1241"
+  }
+}

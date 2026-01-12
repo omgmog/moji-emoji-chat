@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Mobile-specific improvements */
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+
+  body {
+    overscroll-behavior: none;
+    /* Safe area insets for notched devices */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+
+  /* Improve input behavior on mobile */
+  input,
+  textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Better touch targets */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Safe area utilities */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Twemoji rendering */
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+  display: inline-block;
+}
+
+/* Emoji Picker Mobile Fixes */
+.emoji-picker-container {
+  /* Fix category navigation on mobile */
+  /* --epr-category-navigation-button-size: 36px;
+  --epr-emoji-size: 32px; */
+  --epr-picker-border-radius: 0;
+}
+
+.emoji-picker-container .epr-main {
+  --epr-picker-border-color: transparent;
+}
+
+.emoji-picker-container [data-name="suggested"] {
+  display: none;
+}
+.emoji-picker-container .epr-emoji-category-label {
+
+}
+.emoji-picker-container .epr-body {
+  position: relative;
+  height: 400px;
+}
+.emoji-picker-container .epr-emoji-list {
+  min-height: 100% !important;
+}
+
+.emoji-picker-container .epr-category-nav button {
+  --epr-category-navigation-button-size: 40px;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+/* Better touch targets for category buttons on mobile */
+@media (max-width: 640px) {
+  .emoji-picker-container .epr-category-nav {
+    padding: 8px 4px !important;
+  }
+
+  .emoji-picker-container .epr-category-nav button {
+  }
+
+  /* Fix search bar on mobile */
+  .emoji-picker-container .epr-search-container {
+    padding: 8px !important;
+  }
+
+  .emoji-picker-container .epr-search {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+
+  /* Better spacing for emoji grid on mobile */
+  .emoji-picker-container .epr-emoji-category-content {
+    padding: 4px !important;
+  }
+}

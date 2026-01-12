@@ -1,0 +1,14 @@
+{
+  "apps": {
+    "relay": {
+      "name": "moji-relay",
+      "directory": "gun-relay",
+      "url": "https://moji-relay.fly.dev/gun"
+    },
+    "frontend": {
+      "name": "moji-frontend",
+      "directory": "frontend",
+      "url": "https://moji-frontend.fly.dev"
+    }
+  }
+}

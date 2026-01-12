@@ -1,0 +1,16 @@
+{
+  "name": "moji-emoji-chat",
+  "version": "1.0.0",
+  "description": "Emoji-only chat using GunDB and WebRTC",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "deploy": "./deploy.sh",
+    "install:all": "cd frontend && npm install && cd ../gun-relay && npm install",
+    "relay": "cd gun-relay && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
